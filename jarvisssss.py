@@ -109,11 +109,13 @@ def main():
         if 'wikipedia' in query:
             query = query.replace('wikipedia', '')
             search_wikipedia(query)
+            break
 
         #search on google
         elif 'google' in query:
             query = query.replace('google', '')
             open_google(url='https://www.google.com/search?q=')
+            break
 
         # Send an email
         elif 'send email' in query:
@@ -124,16 +126,19 @@ def main():
             speak("What should be the message of the email?")
             message = take_command().lower()
             send_email(to, subject, message)
+            break
 
         # Play a song on youtube
         elif 'play' in query:
             query = query.replace('play', '')
             play_song(query)
+            break
 
         #opening youtube stream
         elif 'open youtube' in query:
             query = query.replace('open youtube', '')
             open_youtube(url="https://www.youtube.com/")
+            break
 
         # Exit the chatbot
         elif 'shutdown' in query:
